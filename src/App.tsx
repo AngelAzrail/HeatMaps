@@ -5,7 +5,6 @@ import MapContainer from './ui/Map/Map';
 
 const App = (): JSX.Element => {
   const map = new Map({ controls: [] });
-
   return <MapContainer map={map} />;
 };
 
