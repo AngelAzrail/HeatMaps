@@ -20,4 +20,6 @@ const MapContainer = memo(({ map }: { map: Map }) => {
     </MapContext.Provider>
   );
 });
+MapContainer.displayName = 'MapContainer';
+
 export default MapContainer;
