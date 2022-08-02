@@ -3,7 +3,7 @@ import { memo, useEffect, useRef } from 'react';
 import MapContext from './MapContext';
 import OSM from './Layers/OSM';
 import MapView from './MapView';
-import Vector from './Layers/Vector/Vector';
+import Source from './Layers/Source/Source';
 
 const MapContainer = memo(({ map }: { map: Map }) => {
   const mapRef = useRef() as any;
@@ -17,7 +17,7 @@ const MapContainer = memo(({ map }: { map: Map }) => {
       <div style={{ width: '100%', height: '100vh' }} ref={mapRef}>
         <MapView />
         <OSM />
-        <Vector />
+        <Source />
       </div>
     </MapContext.Provider>
   );

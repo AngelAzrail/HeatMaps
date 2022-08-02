@@ -1,11 +1,12 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useMemo } from 'react';
 import VectorLayer from 'ol/layer/Vector';
 import MapContext from '../../MapContext';
-import Source from './Source/Source';
+import SourceContext from '../Source/SourceContext';
 
-const Vector = (): JSX.Element => {
+const Vector = (): null => {
   const map = useContext(MapContext);
-  const vector = new VectorLayer();
+  const source = useContext(SourceContext);
+  const vector = useMemo(() => new VectorLayer({ source }), [source]);
 
   useEffect(() => {
     map.addLayer(vector);
@@ -13,7 +14,7 @@ const Vector = (): JSX.Element => {
     return () => {
       map.removeLayer(vector);
     };
-  }, [map]);
-  return <Source layer={vector} />;
+  }, [map, source, vector]);
+  return null;
 };
 export default Vector;
