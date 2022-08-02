@@ -3,10 +3,9 @@ import bbox from '@turf/bbox';
 import { transformExtent } from 'ol/proj';
 import { GeoJSON } from 'ol/format';
 import MapContext from '../../MapContext';
-import points from '../../../../points';
 import SourceContext from './SourceContext';
 
-const Extent = () => {
+const Extent = (): null => {
   const map = useContext(MapContext);
   const source = useContext(SourceContext);
 
@@ -15,9 +14,10 @@ const Extent = () => {
   const geoJson = new GeoJSON().writeFeatures(source.getFeatures());
 
   useEffect(() => {
-    // const extent = bbox(geoJson);
+    const extent = bbox(JSON.parse(geoJson));
+    console.log(extent);
     // map.getView().fit(transformExtent(extent, 'EPSG:4326', 'EPSG:3857'));
-  }, [map, source, features]);
+  }, [map, source, features, geoJson]);
 
   return null;
 };
