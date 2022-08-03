@@ -47,3 +47,4 @@ rules:
   "functional/prefer-readonly-type": 0
   "react/jsx-filename-extension": [2, { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }]
   "max-len": ["warn", { "code": 100 }]
+  no-param-reassign: off
