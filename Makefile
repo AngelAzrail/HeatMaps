@@ -10,3 +10,6 @@ install-deps:
 
 lint:
 	npx eslint . --ext ts,tsx
+
+quick:
+	CI=false DISABLE_ESLINT_PLUGIN=true npm run start
