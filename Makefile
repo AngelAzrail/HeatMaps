@@ -7,3 +7,6 @@ start:
 
 install-deps:
 	npm ci
+
+lint:
+	npx eslint . --ext ts,tsx
