@@ -1,6 +1,9 @@
 import { useEffect, useMemo } from 'react';
 import { Fill, Stroke, Style, Text } from 'ol/style';
 import CircleStyle from 'ol/style/Circle';
+import { useSelector } from 'react-redux';
+import { getMapType } from '../../../../../store/mapSettings/mapSettingsSelectors';
+import MapTypes from '../../../../../utils/enums/MapTypes';
 
 const setColor = (weight: number): string => {
   if (weight >= 100) return 'rgb(255,0,0)';
@@ -11,6 +14,8 @@ const setColor = (weight: number): string => {
 };
 
 const ClusterOptions = ({ layer }: any): null => {
+  const mapType = useSelector(getMapType);
+
   const mainStyle = useMemo(
     () =>
       new Style({
@@ -50,6 +55,10 @@ const ClusterOptions = ({ layer }: any): null => {
   useEffect(() => {
     layer.setStyle(style);
   }, [layer, style]);
+
+  useEffect(() => {
+    layer.setVisible(mapType === MapTypes.Cluster);
+  }, [layer, mapType]);
 
   return null;
 };

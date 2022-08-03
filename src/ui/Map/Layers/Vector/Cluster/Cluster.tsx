@@ -1,8 +1,8 @@
 import { useContext, useEffect, useMemo } from 'react';
 import VectorLayer from 'ol/layer/Vector';
 import { Cluster } from 'ol/source';
-import MapContext from '../../MapContext';
-import SourceContext from '../Source/SourceContext';
+import MapContext from '../../../MapContext';
+import SourceContext from '../../Source/SourceContext';
 import ClusterOptions from './ClusterOptions';
 
 const ClusterLayer = (): JSX.Element => {

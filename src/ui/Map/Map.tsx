@@ -4,6 +4,7 @@ import MapContext from './MapContext';
 import OSM from './Layers/OSM';
 import MapView from './MapView';
 import Source from './Layers/Source/Source';
+import ViewSwitcher from '../Controls/ViewSwitcher';
 
 const MapContainer = memo(({ map }: { map: Map }) => {
   const mapRef = useRef() as any;
@@ -18,6 +19,7 @@ const MapContainer = memo(({ map }: { map: Map }) => {
         <MapView />
         <OSM />
         <Source />
+        <ViewSwitcher />
       </div>
     </MapContext.Provider>
   );
