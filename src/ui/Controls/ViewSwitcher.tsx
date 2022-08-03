@@ -1,4 +1,6 @@
+import { Button } from 'antd';
+
 const ViewSwitcher = () => {
-  return <div></div>;
+  return <Button type="primary"></Button>;
 };
 export default ViewSwitcher;
