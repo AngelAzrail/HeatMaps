@@ -1,18 +1,19 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import MapTypes from '../../utils/enums/MapTypes';
 
 export interface MapSettings {
-  mapType: string;
+  mapType: MapTypes;
 }
 
 const mapSettingsState: MapSettings = {
-  mapType: '',
+  mapType: MapTypes.Cluster,
 };
 
 const mapSettingsSlice = createSlice({
   name: 'mapSettings',
   initialState: mapSettingsState,
   reducers: {
-    changeMapType(state, action: PayloadAction<string>) {
+    changeMapType(state, action: PayloadAction<MapTypes>) {
       state.mapType = action.payload;
     },
   },
