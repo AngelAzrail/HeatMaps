@@ -4,8 +4,9 @@ import VectorSource from 'ol/source/Vector';
 import { Point } from 'ol/geom';
 import SourceContext from '../../Source/SourceContext';
 import MapContext from '../../../MapContext';
+import HeatMapOptions from './HeatMapOptions';
 
-const HeatMapLayer = (): null => {
+const HeatMapLayer = (): JSX.Element => {
   const map = useContext(MapContext);
   const source = useContext(SourceContext);
 
@@ -30,6 +31,6 @@ const HeatMapLayer = (): null => {
     };
   }, [source, map, heatmap]);
 
-  return null;
+  return <HeatMapOptions layer={heatmap} />;
 };
 export default HeatMapLayer;

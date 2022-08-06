@@ -8,7 +8,7 @@ const HeatMapOptions = ({ layer }: any): null => {
 
   useEffect(() => {
     layer.setVisible(mapType === MapTypes.Heat);
-  });
+  }, [mapType, layer]);
   return null;
 };
 export default HeatMapOptions;
